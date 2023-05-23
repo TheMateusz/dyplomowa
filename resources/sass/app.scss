@@ -1,0 +1,40 @@
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/utilities";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/alert";
+
+@import "bootstrap/scss/utilities/api";
+
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Sweetalert2
+@import "sweetalert2/src/sweetalert2.scss";
+
+@import "tools.scss";
+@import "menu.scss";
+@import "elements.scss";
+@import "button.scss";
+@import "language.scss";
+@import "custom-card.scss";
+@import "interests.scss";
+@import "alert.scss";
+
+@import "pages/main-page.scss";
+@import "pages/panel.scss";

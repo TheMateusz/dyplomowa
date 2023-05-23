@@ -1,0 +1,101 @@
+.panel{
+    &__section{
+        background-color: white;
+        border-radius: 3px;
+        margin-bottom: 24px;
+        &__title{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: $color-featured;
+            border-radius: 3px;
+            color: white;
+        }
+        &__container{
+            padding: 20px;
+        }
+    }
+    &__details{
+        &__container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            grid-column-gap: 24px;
+            grid-row-gap: 10px;
+        }
+        &__item{
+            font-size: 18px;
+            font-weight: bold;
+            &__title{
+                font-weight: normal;
+            }
+        }
+    }
+    &__profile{
+        &__container{
+            text-align: center;
+            &__title{
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+    }
+    &__post{
+        &__container{
+            background-color: #E3E3E3;
+            border-radius: 3px;
+            padding: 20px;
+
+        }
+        &__title{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .button{
+            width: 300px;
+            text-align: center;
+        }
+    }
+    &__friends{
+        position: sticky;
+        top: 20px;
+        &__list{
+            a{
+                color: black;
+                text-decoration: unset;
+                @include basic-transition();
+                &:hover{
+                    color: $color-featured;
+                }
+            }
+        }
+        &__messages{
+            background-color: $color-featured;
+            padding: 0 5px;
+            border-radius: 3px;
+            color: white;
+            font-size: 14px;
+        }
+        &__container{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            @include media-breakpoint-down(lg){
+                border-radius: 3px;
+            }
+        }
+        &__title{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            @include media-breakpoint-down(lg){
+                border-radius: 3px;
+            }
+        }
+        @include media-breakpoint-down(lg){
+            position: relative;
+            top: 0;
+            padding: 0 12px;
+        }
+    }
+}

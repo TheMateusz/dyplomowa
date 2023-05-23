@@ -1,0 +1,15 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+$color-featured: #28D778;
+
+.tooltip {
+    --bs-tooltip-bg: #28D778;
+    --bs-tooltip-opacity: 1 ;
+    --bs-tooltip-color: white;
+}

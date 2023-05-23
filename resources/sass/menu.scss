@@ -1,0 +1,49 @@
+.menu{
+    position: fixed;
+    top: 20px;
+    right: -165px;
+    border-radius: 3px 0 0 3px;
+    background-color: white;
+    padding: 10px;
+    z-index: 1000;
+    @include basic-transition();
+
+    &__link{
+    }
+
+    &__item{
+
+    }
+
+    &__separator{
+        height: 30px;
+        width: 1px;
+        background-color: #E6E6E6;
+    }
+
+    svg{
+        width: 30px;
+        height: 30px;
+        path, circle{
+            @include basic-transition();
+        }
+    }
+
+    &__active{
+        right: 0;
+        .menu__activation {
+            svg{
+                overflow: hidden;
+                path:nth-child(2) {
+                    transform: translate(-100px);
+                }
+                path:nth-child(1){
+                    transform: rotate(45deg) translateX(8px) translateY(-10px);
+                }
+                path:nth-child(3) {
+                    transform: rotate(-45deg) translateX(-16px) translateY(0px);
+                }
+            }
+        }
+    }
+}
