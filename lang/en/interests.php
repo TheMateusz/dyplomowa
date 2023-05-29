@@ -1,0 +1,28 @@
+<?php
+return [
+    'lucznictwo' => 'Archery',
+    'bieganie' => 'Running',
+    'ciezary' => 'Weightlifting',
+    'gotowanie' => 'Cooking',
+    'gra_na_instrumencie' => 'Playing an Instrument',
+    'gry_planszowe' => 'Board Games',
+    'jezdziectwo' => 'Horseback Riding',
+    'kolarstwo' => 'Cycling',
+    'kolekcjonerstwo' => 'Collecting',
+    'ksiazki' => 'Books',
+    'lowienie_ryb' => 'Fishing',
+    'majsterkowanie' => 'DIY',
+    'malowanie' => 'Painting',
+    'motory' => 'Motorcycles',
+    'mechanika' => 'Mechanics',
+    'muzyka' => 'Music',
+    'nurkowanie' => 'Scuba Diving',
+    'origami' => 'Origami',
+    'podrozowanie' => 'Traveling',
+    'programowanie' => 'Programming',
+    'samochody' => 'Cars',
+    'sporty_zimowe' => 'Winter Sports',
+    'trekking' => 'Trekking',
+    'zwierzeta' => 'Animals',
+];
+

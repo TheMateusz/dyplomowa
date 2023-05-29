@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Interest;
+use App\Models\message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Pusher\Pusher;
 
 class HomeController extends Controller
 {
@@ -101,4 +103,5 @@ class HomeController extends Controller
 
         return redirect()->back()->with('success', 'Dodano użytkownika jako znajomego.');
     }
+    // get all Messages
 }

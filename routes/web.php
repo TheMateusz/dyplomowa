@@ -39,9 +39,10 @@ Route::middleware(['auth', 'verified', 'user.interest.data'])->group(function ()
     Route::post('/post/{post}/like', [PostController::class, 'likePost'])->name('post.like');
     Route::post('/post/{post}/unlike', [PostController::class, 'unlikePost'])->name('post.unlike');
 
-    Route::get('/chat', [ChatController::class, 'index'])->name('chat');
-    Route::get('get-messages', [ChatController::class, 'getMessages']);
-    Route::post('/send-message', [ChatController::class, 'sendMessage']);
+    Route::get('/message/{id}', [ChatController::class, 'getMessage'])->name('message');
+    Route::get('user/message/{id}', [ChatController::class, 'getMessage'])->name('message');
+    Route::post('message', [ChatController::class,'sendMessage']);
+    Route::post('user/message', [ChatController::class,'sendMessage']);
 
 });
 

@@ -13,7 +13,7 @@
                     @csrf
                     <div class="interests d-flex flex-wrap gap-4 justify-content-between align-items-center">
                         @foreach($interests as $interest)
-                            <div class="interests__section form-check" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$interest->name}}">
+                            <div class="interests__section form-check" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ __('interests.'.$interest->slug) }}">
                                 <img class="interests__section__img" for="{{$interest->slug}}" src="{{ asset('images/interests/'.$interest->slug.'.png') }}">
                                 <input class="interests__section__input" type="checkbox" id="{{$interest->slug}}" name="hobby[]" value="{{$interest->id}}" {{ $selectedInterests->contains('id', $interest->id) ? 'checked' : '' }}>
                             </div>

@@ -57,10 +57,46 @@
             width: 300px;
             text-align: center;
         }
+        .like-button circle{
+            fill: #93eaba;
+        }
+        .unlike-button circle{
+            fill: #f39a9a;
+        }
+    }
+    &__sticky{
+        top: 20px;
+        position: sticky;
+    }
+    &__chat{
+        &__container{
+            padding: 0;
+            background-color: white;
+            &__wrapper{
+                padding: 10px;
+                height: 500px;
+                overflow: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            &__message{
+                background-color: #efefef;
+                border-radius: 5px;
+                padding: 5px 10px;
+                display: flex;
+                justify-content: flex-start;
+                &--received{
+                    justify-content: flex-end;
+                }
+            }
+            &__input{
+                padding: 10px;
+            }
+        }
+
     }
     &__friends{
-        position: sticky;
-        top: 20px;
         &__list{
             a{
                 color: black;
@@ -68,6 +104,17 @@
                 @include basic-transition();
                 &:hover{
                     color: $color-featured;
+                }
+            }
+        }
+        &__button{
+            svg,path{
+                @include basic-transition();
+            }
+            &:hover{
+                cursor: pointer;
+                svg,path{
+                    fill: $color-featured;
                 }
             }
         }

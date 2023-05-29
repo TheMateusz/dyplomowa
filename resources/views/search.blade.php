@@ -47,7 +47,7 @@
                                 <div class="panel__section__container">
                                     <div class="interests d-flex flex-wrap gap-3 align-items-center">
                                         @foreach($mostMatchingUser->interests as $interest)
-                                            <div class="interests__section form-check" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$interest->name}}">
+                                            <div class="interests__section form-check" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ __('interests.'.$interest->slug) }}">
                                                 <img class="interests__section__img" for="{{$interest->slug}}" src="{{ asset('images/interests/'.$interest->slug.'.png') }}">
                                             </div>
                                         @endforeach

@@ -80,7 +80,7 @@ class PostController extends Controller
             $post->likes()->attach($user->id);
         }
 
-        return response()->json(['message' => 'Post liked successfully']);
+        return response()->json(['message' => 'Post liked successfully', 'likecount' => $post->likes()->count()]);
     }
 
     public function unlikePost(Request $request, $postId)
@@ -92,6 +92,6 @@ class PostController extends Controller
             $post->likes()->detach($user->id);
         }
 
-        return response()->json(['message' => 'Post unliked successfully']);
+        return response()->json(['message' => 'Post unliked successfully', 'likecount' => $post->likes()->count()]);
     }
 }

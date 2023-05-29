@@ -44,4 +44,12 @@ return [
     'Płeć' => 'Płeć',
     'Nazwa' => 'Nazwa',
 
+    'Polub wpis' => 'Polub wpis',
+    'Anuluj polubienie wpisu' => 'Anuluj polubienie wpisu',
+    'Edytuj wpis' => 'Edytuj wpis',
+    'Usuń wpis' => 'Usuń wpis',
+    'Ustawienia podstawowych danych' => 'Ustawienia podstawowych danych',
+    'Ustawienia zainteresowań' => 'Ustawienia zainteresowań',
+
+
 ];

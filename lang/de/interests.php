@@ -1,0 +1,28 @@
+<?php
+return [
+    'lucznictwo' => 'Bogenschießen',
+    'bieganie' => 'Laufen',
+    'ciezary' => 'Gewichtheben',
+    'gotowanie' => 'Kochen',
+    'gra_na_instrumencie' => 'Instrument spielen',
+    'gry_planszowe' => 'Brettspiele',
+    'jezdziectwo' => 'Reiten',
+    'kolarstwo' => 'Radfahren',
+    'kolekcjonerstwo' => 'Sammlungen',
+    'ksiazki' => 'Bücher',
+    'lowienie_ryb' => 'Angeln',
+    'majsterkowanie' => 'Heimwerken',
+    'malowanie' => 'Malen',
+    'motory' => 'Motorräder',
+    'mechanika' => 'Mechanik',
+    'muzyka' => 'Musik',
+    'nurkowanie' => 'Tauchen',
+    'origami' => 'Origami',
+    'podrozowanie' => 'Reisen',
+    'programowanie' => 'Programmieren',
+    'samochody' => 'Autos',
+    'sporty_zimowe' => 'Wintersport',
+    'trekking' => 'Wandern',
+    'zwierzeta' => 'Tiere',
+];
+

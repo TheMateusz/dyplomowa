@@ -33,8 +33,8 @@ function likePost(postId) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data.message);
-            window.location.reload();
+            updateLikesCount(postId, data.likecount);
+            updateLikeButton(postId, true);
         })
         .catch(error => {
             console.error(error);
@@ -50,12 +50,35 @@ function unlikePost(postId) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data.message);
-            window.location.reload();
+            updateLikesCount(postId, data.likecount);
+            updateLikeButton(postId, false);
         })
         .catch(error => {
             console.error(error);
         });
+}
+
+function updateLikesCount(postId, likesCount) {
+
+    const likeButtonLikesCount = document.querySelector('.like-button[data-post-id="' + postId + '"] #likesCount_' + postId);
+    const unlikeButtonLikesCount = document.querySelector('.unlike-button[data-post-id="' + postId + '"] #likesCount_' + postId);
+    if (likeButtonLikesCount && unlikeButtonLikesCount) {
+        likeButtonLikesCount.textContent = likesCount;
+        unlikeButtonLikesCount.textContent = likesCount;
+    }
+}
+
+function updateLikeButton(postId, isLiked) {
+    console.log(postId);
+    const likeButton = document.querySelector('.like-button[data-post-id="' + postId + '"]');
+    const unlikeButton = document.querySelector('.unlike-button[data-post-id="' + postId + '"]');
+
+    if (likeButton && unlikeButton) {
+        console.log('change');
+        console.log(likeButton);
+        likeButton.classList.toggle('d-none', isLiked);
+        unlikeButton.classList.toggle('d-none', !isLiked);
+    }
 }
 
 document.querySelectorAll('.like-button').forEach(button => {

@@ -1,0 +1,28 @@
+<?php
+return [
+    'lucznictwo' => 'Łucznictwo',
+    'bieganie' => 'Bieganie',
+    'ciezary' => 'Cieżary',
+    'gotowanie' => 'Gotowanie',
+    'gra_na_instrumencie' => 'Gra na instrumencie',
+    'gry_planszowe' => 'Gry planszowe',
+    'jezdziectwo' => 'Jezdziectwo',
+    'kolarstwo' => 'Kolarstwo',
+    'kolekcjonerstwo' => 'Kolekcjonerstwo',
+    'ksiazki' => 'Książki',
+    'lowienie_ryb' => 'Łowienie ryb',
+    'majsterkowanie' => 'Majsterkowanie',
+    'malowanie' => 'Malowanie',
+    'motory' => 'Motory',
+    'mechanika' => 'Mechanika',
+    'muzyka' => 'Muzyka',
+    'nurkowanie' => 'Nurkowanie',
+    'origami' => 'Origami',
+    'podrozowanie' => 'Podróże',
+    'programowanie' => 'Programowanie',
+    'samochody' => 'Samochody',
+    'sporty_zimowe' => 'Sporty zimowe',
+    'trekking' => 'Trekking',
+    'zwierzeta' => 'Zwierzęta',
+];
+

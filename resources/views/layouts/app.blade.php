@@ -6,6 +6,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @auth
+    <meta name="user-id" content="{{ Auth::user()->id }}">
+    @endauth
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -22,9 +25,9 @@
         <nav class="menu d-flex align-items-center gap-2">
             <div class="menu__item menu__activation">{!! file_get_contents('images/Menu.svg') !!}</div>
             <div class="menu__item menu__separator"></div>
-            <div class="menu__item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{__('main.Strona główna')}}" ><a href="{{ route('home') }}" class="menu__link">{!! file_get_contents('images/Home_light.svg') !!}</a></div>
             <div class="menu__item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{__('main.Moje konto')}}" ><a href="{{ route('user.index') }}" class="menu__link">{!! file_get_contents('images/User_alt_light.svg') !!}</a></div>
-            <div class="menu__item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{__('main.Ustawienia')}}"><a href="" class="menu__link">{!! file_get_contents('images/Setting_line_light.svg') !!}</a></div>
+            <div class="menu__item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{__('main.Strona główna')}}" ><a href="{{ route('home') }}" class="menu__link">{!! file_get_contents('images/Home_light.svg') !!}</a></div>
+{{--            <div class="menu__item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{__('main.Ustawienia')}}"><a href="" class="menu__link">{!! file_get_contents('images/Setting_line_light.svg') !!}</a></div>--}}
             <div class="menu__item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{__('main.Wyloguj')}}">
                 <a href="{{ route('logout') }}" class="menu__link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     {!! file_get_contents('images/Sign_out_squre_light.svg') !!}
