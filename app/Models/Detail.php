@@ -20,6 +20,8 @@ class Detail extends Model
         'city',
         'min_age',
         'max_age',
+        'gender',
+        'avatar',
     ];
 
     public function user()

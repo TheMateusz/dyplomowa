@@ -68,3 +68,19 @@ h6{
 
 }
 
+footer{
+    position: fixed;
+    bottom: 0;
+    font-size: 14px;
+    color: white;
+    padding: 10px;
+    a{
+        color: white;
+        text-decoration: none;
+        @include basic-transition();
+        &:hover{
+            color: $color-featured;
+        }
+    }
+}
+

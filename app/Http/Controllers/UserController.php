@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\message;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,6 +15,15 @@ class UserController extends Controller
         $interests = $user->interests;
         $posts = $user->posts;
         $friends = $user->friends;
+
+        foreach ($friends as $friend) {
+            $unreadCount = Message::where('from', $friend->id)
+                ->where('to', Auth::id())
+                ->where('is_read', 0)
+                ->count();
+
+            $friend->unread = $unreadCount;
+        }
 
         return view('user.index',[
             'details' => $details,
@@ -30,7 +40,16 @@ class UserController extends Controller
         $posts = $user->posts;
         $friends = Auth::user()->friends;
 
-        return view('user.show',[
+        foreach ($friends as $friend) {
+            $unreadCount = Message::where('from', $friend->id)
+                ->where('to', Auth::id())
+                ->where('is_read', 0)
+                ->count();
+
+            $friend->unread = $unreadCount;
+        }
+
+        return view('user.index',[
             'details' => $details,
             'interests' => $interests,
             'posts' => $posts,

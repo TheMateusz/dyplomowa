@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (result.value) {
                     const url = removeDoubleSlashes(window.location.origin + '/post' + '/' + button.getAttribute('data-id'));
                     const xhr = new XMLHttpRequest();
-                    console.log(url);
                     xhr.open('DELETE', url);
                     xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
                     xhr.onload = function() {

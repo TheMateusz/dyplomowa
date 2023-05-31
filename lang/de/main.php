@@ -42,4 +42,14 @@ return [
     'Podstawowe dane' => 'Grundlegende Daten',
     'Płeć' => 'Geschlecht',
     'Nazwa' => 'Name',
+    'Polub wpis' => 'Beitrag liken',
+    'Anuluj polubienie wpisu' => 'Gefällt mir nicht mehr',
+    'Edytuj wpis' => 'Beitrag bearbeiten',
+    'Usuń wpis' => 'Beitrag löschen',
+    'Ustawienia podstawowych danych' => 'Einstellungen für Grunddaten',
+    'Ustawienia zainteresowań' => 'Einstellungen für Interessen',
+    'Zdjęcie profilowe' => 'Profilbild',
+    'Mężczyzna' => 'Mann',
+    'Kobieta' => 'Frau',
+    'Inna' => 'Sonstige'
 ];

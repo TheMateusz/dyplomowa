@@ -1,8 +1,12 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <audio id="messageSound" src="{{ asset('sounds/message.mp3') }}"></audio>
+    <link rel="icon" href="{{ asset('images/favi.ico') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,9 +19,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="body" style="background-image: url('{{ asset('images/background.png') }}')">
     @auth
@@ -52,8 +53,28 @@
         @endforeach
         <div class="language__item language__activation">{!! file_get_contents('images/world_2_light.svg') !!}</div>
     </div>
+
     @include('helpers.flash-messages')
     @yield('content')
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        fetch('/translations')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const additionalTranslations = {
+                    greeting: 'Hello',
+                    farewell: 'Goodbye'
+                };
+                window.translations = Object.assign({}, data, additionalTranslations);
+            })
+            .catch(error => console.error(error));
+    </script>
 
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
@@ -61,5 +82,9 @@
         }, false);
     </script>
     @yield('js-files')
+    @vite(['resources/js/chat.js'])
+    <footer>
+        <a href="{{ route('author') }}"> Mateusz Matusiak</a>
+    </footer>
 </body>
 </html>

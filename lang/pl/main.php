@@ -40,16 +40,22 @@ return [
     'Ustawienia' => 'Ustawienia',
     'Moje konto' => 'Moje konto',
     'Podstawowe dane' => 'Podstawowe dane',
-
     'Płeć' => 'Płeć',
     'Nazwa' => 'Nazwa',
-
     'Polub wpis' => 'Polub wpis',
     'Anuluj polubienie wpisu' => 'Anuluj polubienie wpisu',
     'Edytuj wpis' => 'Edytuj wpis',
     'Usuń wpis' => 'Usuń wpis',
     'Ustawienia podstawowych danych' => 'Ustawienia podstawowych danych',
     'Ustawienia zainteresowań' => 'Ustawienia zainteresowań',
+    'Zdjęcie profilowe' => 'Zdjęcie profilowe',
+    'Mężczyzna' => 'Mężczyzna',
+    'Kobieta' => 'Kobieta',
+    'Inna' => 'Inna',
 
-
+    'Prześlij kod ponownie' => 'Prześlij kod ponownie',
+    'Przed kontynuowaniem, sprawdź swój e-mail w celu potwierdzenia swoje konta. Jeśli nie otrzymałeś e-maila, kliknij przycisk obok.' => 'Przed kontynuowaniem, sprawdź swój e-mail w celu potwierdzenia swoje konta. Jeśli nie otrzymałeś',
+    'Brak dodanych znajomych, przejdz na stronę główną i zacznij parowanie' => 'Brak dodanych znajomych, przejdz na stronę główną i zacznij parowanie',
+    'Tytuł wpisu' => 'Tytuł wpisu',
+    'Treść wpisu' => 'Treść wpisu',
 ];

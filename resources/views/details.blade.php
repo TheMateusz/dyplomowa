@@ -8,7 +8,7 @@
         </div>
         <div class="col-11 col-lg-7 offset-0 offset-lg-1">
             <div class="custom-card">
-                <form method="POST" class="d-flex flex-column gap-4 justify-content-center" action="{{ route('detail.update')}}">
+                <form method="POST" class="d-flex flex-column gap-4 justify-content-center" enctype="multipart/form-data" action="{{ route('detail.update')}}">
                     {{ method_field('PUT') }}
                     @csrf
                     <div class="form__section">
@@ -49,6 +49,24 @@
                                 @enderror
                             </div>
                         </div>
+                    </div>
+                    <div class="form__section">
+                        <label for="gender">{{ __('main.Płeć') }}</label>
+                        <select id="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" required>
+                            <option value="0" {{ (old('gender', $details->gender ?? '') === 'male') ? 'selected' : '' }}>{{ __('main.Mężczyzna') }}</option>
+                            <option value="1" {{ (old('gender', $details->gender ?? '') === 'female') ? 'selected' : '' }}>{{ __('main.Kobieta') }}</option>
+                            <option value="2" {{ (old('gender', $details->gender ?? '') === 'other') ? 'selected' : '' }}>{{ __('main.Inna') }}</option>
+                        </select>
+                        @error('gender')
+                        <div class="form__section--error" role="alert">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form__section">
+                        <label for="avatar">{{ __('main.Zdjęcie profilowe') }}</label>
+                        <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+                        @error('avatar')
+                        <div class="form__section--error" role="alert">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <input type="submit" value="{{ __('main.Zapisz') }}" class="button w-100">

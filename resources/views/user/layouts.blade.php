@@ -8,15 +8,23 @@
                         <div class="panel__section__title panel__friends__title">{{__('main.Dobrane osoby')}}</div>
                         <div class="panel__section__container panel__friends__container">
                             <div class="panel__friends__list d-flex flex-column gap-1">
+                                @if(count($friends) > 0)
                                 @foreach($friends as $friend)
                                     <div class="panel__friends__item d-flex align-items-center gap-2 d-flex justify-content-between">
                                         <a href="/user/{{ $friend->id }}">{{ $friend->name }} </a>
                                         <div class="">
-{{--                                            <span class="panel__friends__messages">{{ $friend->messages_count }}</span>--}}
-                                            <span class="user panel__friends__button" id="{{ $friend->id }}">{!! file_get_contents('images/Send_light.svg') !!}</span>
+                                            <span class="user panel__friends__button" id="{{ $friend->id }}">
+                                                {!! file_get_contents('images/Send_light.svg') !!}
+                                                @if($friend->unread) <span class="pending">{{ $friend->unread }}</span>@endif
+                                            </span>
                                         </div>
                                     </div>
                                 @endforeach
+                                @else
+                                    <div class="panel__friends__item d-flex align-items-center gap-2 d-flex justify-content-between">
+                                        <span>{{__('main.Brak dodanych znajomych, przejdz na stronę główną i zacznij parowanie')}}</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -41,13 +49,13 @@
                         @csrf
                         <input type="hidden" name="id" value="" id="post-id">
                         <div class="form__section">
-                            <input id="title" type="text" placeholder="Tytuł wpisu" class="form-control @error('title') is-invalid @enderror" name="title" value="" required autocomplete="title" autofocus>
+                            <input id="title" type="text" placeholder="{{__('main.Tytuł wpisu')}}" class="form-control @error('title') is-invalid @enderror" name="title" value="" required autocomplete="title" autofocus>
                             @error('title')
                             <div class="form__section--error" role="alert">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form__section">
-                            <textarea id="content" rows="5" placeholder="Treść wpisu" class="form-control @error('content') is-invalid @enderror" name="content" required autocomplete="content" autofocus></textarea>
+                            <textarea id="content" rows="5" placeholder="{{__('main.Treść wpisu')}}" class="form-control @error('content') is-invalid @enderror" name="content" required autocomplete="content" autofocus></textarea>
                             @error('content')
                             <div class="form__section--error" role="alert">{{ $message }}</div>
                             @enderror
@@ -69,13 +77,13 @@
                         {{ method_field('PUT') }}
                         @csrf
                         <div class="form__section">
-                            <input id="title" type="text" placeholder="Tytuł wpisu" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $details->title ?? '') }}" required autocomplete="title" autofocus>
+                            <input id="title" type="text" placeholder="{{__('main.Tytuł wpisu')}}" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $details->title ?? '') }}" required autocomplete="title" autofocus>
                             @error('title')
                             <div class="form__section--error" role="alert">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form__section">
-                            <textarea id="content" rows="5" placeholder="Treść wpisu" class="form-control @error('content') is-invalid @enderror" name="content" required autocomplete="content" autofocus>{{ old('content', $details->message ?? '') }}</textarea>
+                            <textarea id="content" rows="5" placeholder="{{__('main.Treść wpisu')}}" class="form-control @error('content') is-invalid @enderror" name="content" required autocomplete="content" autofocus>{{ old('content', $details->message ?? '') }}</textarea>
                             @error('content')
                             <div class="form__section--error" role="alert">{{ $message }}</div>
                             @enderror
@@ -94,7 +102,6 @@
 @section('js-files')
     @vite(['resources/js/delete.js'])
     @vite(['resources/js/edit-post.js'])
-    @vite(['resources/js/chat.js'])
 @endsection
 
 

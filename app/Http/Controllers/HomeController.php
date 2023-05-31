@@ -103,5 +103,9 @@ class HomeController extends Controller
 
         return redirect()->back()->with('success', 'Dodano użytkownika jako znajomego.');
     }
+
+    public function author(){
+        return view('author');
+    }
     // get all Messages
 }

@@ -14,6 +14,7 @@ class ChatController
     public function getMessage($user_id)
     {
         $my_id = Auth::id();
+        $me = User::find($my_id);
         $user = User::find($user_id);
 
         // Make read all unread message sent
@@ -26,7 +27,7 @@ class ChatController
             $query->where('from', $my_id)->where('to', $user_id);
         })->get();
 
-        return view('messages.index', ['messages' => $messages, 'user' => $user]);
+        return view('messages.index', ['messages' => $messages, 'user' => $user, 'me' => $me]);
     }
 
     // send new message

@@ -41,6 +41,12 @@
                 font-weight: bold;
             }
         }
+        &__avatar{
+            img{
+                width: auto;
+                height: 70px;
+            }
+        }
     }
     &__post{
         &__container{
@@ -85,9 +91,15 @@
                 border-radius: 5px;
                 padding: 5px 10px;
                 display: flex;
-                justify-content: flex-start;
+                gap: 10px;
                 &--received{
-                    justify-content: flex-end;
+                    flex-direction: row-reverse;
+                }
+                &__avatar{
+                    img{
+                        width: 20px;
+                        height: auto
+                    }
                 }
             }
             &__input{

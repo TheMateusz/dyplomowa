@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const url = removeDoubleSlashes(window.location.origin + '/post' + '/' + button.getAttribute('data-id'));
             const xhr = new XMLHttpRequest();
-            console.log(url);
             xhr.open('GET', url);
             xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
             xhr.onload = function() {
@@ -69,13 +68,10 @@ function updateLikesCount(postId, likesCount) {
 }
 
 function updateLikeButton(postId, isLiked) {
-    console.log(postId);
     const likeButton = document.querySelector('.like-button[data-post-id="' + postId + '"]');
     const unlikeButton = document.querySelector('.unlike-button[data-post-id="' + postId + '"]');
 
     if (likeButton && unlikeButton) {
-        console.log('change');
-        console.log(likeButton);
         likeButton.classList.toggle('d-none', isLiked);
         unlikeButton.classList.toggle('d-none', !isLiked);
     }

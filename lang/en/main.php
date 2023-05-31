@@ -42,5 +42,15 @@ return [
     'Podstawowe dane' => 'Basic Data',
     'Płeć' => 'Gender',
     'Nazwa' => 'Name',
+    'Polub wpis' => 'Like post',
+    'Anuluj polubienie wpisu' => 'Unlike post',
+    'Edytuj wpis' => 'Edit post',
+    'Usuń wpis' => 'Delete post',
+    'Ustawienia podstawowych danych' => 'Basic data settings',
+    'Ustawienia zainteresowań' => 'Interests settings',
+    'Zdjęcie profilowe' => 'Profile picture',
+    'Mężczyzna' => 'Male',
+    'Kobieta' => 'Female',
+    'Inna' => 'Other'
 
 ];

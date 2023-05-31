@@ -7,6 +7,7 @@ use App\Http\Controllers\InterestsController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +48,7 @@ Route::middleware(['auth', 'verified', 'user.interest.data'])->group(function ()
 });
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('/author', [HomeController::class, 'author'])->name('author');
 
 Auth::routes(['verify' => true]);
 

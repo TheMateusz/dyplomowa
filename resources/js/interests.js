@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         checkbox.addEventListener('change', function() {
             if (this.checked) {
-                console.log('checked');
                 if (checkedCount < 10) {
                     checkedCount++;
                     this.parentElement.classList.add('selected');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire('Oops...', 'Możesz wybrać maksymalnie 10 zainteresowań', 'error');
                 }
             } else {
-                console.log('unchecked');
                 checkedCount--;
                 this.parentElement.classList.remove('selected');
             }
