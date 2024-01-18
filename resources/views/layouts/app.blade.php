@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Scripts -->
+    <link rel="stylesheet" href="{{ asset('build/assets/app.[hash].css') }}" />
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,21 +60,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        fetch('/translations')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const additionalTranslations = {
-                    greeting: 'Hello',
-                    farewell: 'Goodbye'
-                };
-                window.translations = Object.assign({}, data, additionalTranslations);
-            })
-            .catch(error => console.error(error));
+        window.translations = <?php echo json_encode(__('main')) ?>;
     </script>
 
     <script type="text/javascript">

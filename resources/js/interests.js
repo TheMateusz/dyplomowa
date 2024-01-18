@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log(window.translations['Możesz wybrać maksymalnie 10 zainteresowań'])
+
     const checkboxes = document.querySelectorAll('.interests__section__input');
     let checkedCount = 0;
 
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.parentElement.classList.add('selected');
                 } else {
                     this.checked = false;
-                    Swal.fire('Oops...', 'Możesz wybrać maksymalnie 10 zainteresowań', 'error');
+                    Swal.fire('Oops...', window.translations['Możesz wybrać maksymalnie 10 zainteresowań'], 'error');
                 }
             } else {
                 checkedCount--;

@@ -94,7 +94,7 @@ function startTitleAnimation(status) {
 
     if (status) {
         intervalId = setInterval(function() {
-            document.title = isMessageShown ? "FindFriends" : 'Masz nową wiadomość';
+            document.title = isMessageShown ? window.translations['Find Friends'] : window.translations['Masz nową wiadomość'];
             isMessageShown = !isMessageShown;
         }, 700);
     } else {

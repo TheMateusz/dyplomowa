@@ -3,6 +3,7 @@
 return [
     'Find Friends' => 'Find Friends',
     'Zaloguj' => 'Zaloguj',
+    'Zaloguj się' => 'Zaloguj się',
     'Proszę wprowadzić swoje dane uwierzytelniające, aby uzyskać dostęp do panelu. W przypadku problemów z logowaniem skontaktuj się z administratorem systemu.' => 'Proszę wprowadzić swoje dane uwierzytelniające, aby uzyskać dostęp do panelu. W przypadku problemów z logowaniem skontaktuj się z administratorem systemu.',
     'Nie posiadasz jeszcze konta ?' => 'Nie posiadasz jeszcze konta ?',
     'Email' => 'Email',
@@ -52,10 +53,19 @@ return [
     'Mężczyzna' => 'Mężczyzna',
     'Kobieta' => 'Kobieta',
     'Inna' => 'Inna',
+    'register description' => 'Wprowadź podstawowe informacje, aby rozpocząć proces rejestracji. Pola oznaczone gwiazdką (*) są
+                wymagane. Po wypełnieniu formularza kliknij przycisk Zarejestruj się, aby przejść do kolejnego etapu.',
 
     'Prześlij kod ponownie' => 'Prześlij kod ponownie',
     'Przed kontynuowaniem, sprawdź swój e-mail w celu potwierdzenia swoje konta. Jeśli nie otrzymałeś e-maila, kliknij przycisk obok.' => 'Przed kontynuowaniem, sprawdź swój e-mail w celu potwierdzenia swoje konta. Jeśli nie otrzymałeś',
     'Brak dodanych znajomych, przejdz na stronę główną i zacznij parowanie' => 'Brak dodanych znajomych, przejdz na stronę główną i zacznij parowanie',
     'Tytuł wpisu' => 'Tytuł wpisu',
     'Treść wpisu' => 'Treść wpisu',
+    'A fresh verification link has been sent to your email address.' => 'Nowy link weryfikacyjny został wysłany na Twój adres e-mail.',
+
+    'Możesz wybrać maksymalnie 10 zainteresowań' => 'Możesz wybrać maksymalnie 10 zainteresowań',
+    'Masz nową wiadomość' => 'Masz nową wiadomość',
+    'Czy na pewno chcesz usunąć rekord?' => 'Czy na pewno chcesz usunąć rekord?',
+    'Tak' => 'Tak',
+    'Nie' => 'Nie',
 ];

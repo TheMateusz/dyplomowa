@@ -11,7 +11,7 @@
             <div class="custom-card">
                 @if (session('resent'))
                     <div class="alert alert-success" role="alert">
-                        {{ __('A fresh verification link has been sent to your email address.') }}
+                        {{ __('main.A fresh verification link has been sent to your email address.') }}
                     </div>
                 @endif
                 <form method="POST" class="d-flex flex-column gap-4 justify-content-center" action="{{ route('verification.resend') }}">

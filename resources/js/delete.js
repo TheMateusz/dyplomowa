@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     deleteButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             Swal.fire({
-                title: 'Czy na pewno chcesz usunąć rekord?',
+                title: window.translations['Czy na pewno chcesz usunąć rekord?'],
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Tak',
-                cancelButtonText: 'Nie'
+                confirmButtonText: window.translations['Tak'],
+                cancelButtonText: window.translations['Nie']
             }).then(function(result) {
                 if (result.value) {
                     const url = removeDoubleSlashes(window.location.origin + '/post' + '/' + button.getAttribute('data-id'));

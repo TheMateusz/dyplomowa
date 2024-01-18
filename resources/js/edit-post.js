@@ -1,7 +1,10 @@
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     const deleteButtons = document.querySelectorAll('.edit-post');
     deleteButtons.forEach(function(button) {
         button.addEventListener('click', function() {
+            console.log('edit post');
             const url = removeDoubleSlashes(window.location.origin + '/post' + '/' + button.getAttribute('data-id'));
             const xhr = new XMLHttpRequest();
             xhr.open('GET', url);
@@ -10,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (xhr.status === 200) {
                     const responseData = JSON.parse(xhr.responseText);
                     const modalContainer = document.querySelector('#editModal');
+                    const myModal = new bootstrap.Modal(document.getElementById('editModal'));
+                    myModal.show();
+
                     modalContainer.querySelector('#title').value = responseData.data.title;
                     modalContainer.querySelector('#content').value = responseData.data.content;
                     modalContainer.querySelector('#post-id').value = responseData.data.id;
@@ -27,7 +33,9 @@ function likePost(postId) {
     fetch('/post/' + postId + '/like', {
         method: 'POST',
         headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            'X-CSRF-TOKEN': document.
+            querySelector('meta[name="csrf-token"]').
+            getAttribute('content')
         }
     })
         .then(response => response.json())

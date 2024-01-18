@@ -51,8 +51,7 @@
         </div>
         <div class="col-11 col-lg-4 offset-0 offset-lg-1">
             <h2 class="mb-4">{{__('main.Rejestracja')}}</h2>
-            <h3>{{__('main.Wprowadź podstawowe informacje, aby rozpocząć proces rejestracji. Pola oznaczone gwiazdką (*) są
-                wymagane. Po wypełnieniu formularza kliknij przycisk Zarejestruj się, aby przejść do kolejnego etapu.')}}</h3>
+            <h3>{{__('main.register description')}}</h3>
         </div>
     </div>
 </div>

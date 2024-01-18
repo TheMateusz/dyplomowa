@@ -4,17 +4,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Language Lines
+    | Authentifizierung Sprachzeilen
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
+    | Die folgenden Sprachzeilen werden während der Authentifizierung für verschiedene
+    | Meldungen verwendet, die wir dem Benutzer anzeigen müssen. Sie können diese
+    | Sprachzeilen entsprechend den Anforderungen Ihrer Anwendung anpassen.
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'Die angegebenen Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.',
+    'password' => 'Das angegebene Passwort ist inkorrekt.',
+    'throttle' => 'Zu viele Anmeldeversuche. Bitte versuchen Sie es erneut in :seconds Sekunden.',
 
 ];
